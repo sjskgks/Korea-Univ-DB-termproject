@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/pt_recommendation", method="POST">
+    <p> pt recommendation </p>
+    <label for="m_id">member id:</label><br>
+    <input id="m_id" type="text" name="id" value=""><br>
+    <input type="submit" value="search">
+</form>
+
+<form action="/search_member_pt" method="POST">
+    <p>current pt info</p>
+    <label for="member_id">member id:</label><br>
+    <input id="member_id" type="text" name="id" value=""><br>
+    <input type="submit" name="send" value="search">
+</form>
+
+<table border="1">
+    <thead>
+        <th>m_id</th>
+        <th>m_name</th>
+        <th>m_phone</th>
+        <th>t_id</th>
+        <th>t_name</th>
+        <th>t_phone</th>
+        <th>day_of_week</th>
+        <th>pt_time</th>
+    </thead>
+
+    <tbody>
+        {% for pt in pts %}
+        <tr>
+            <td>{{pt[0]}}</td>
+            <td>{{pt[1]}}</td>
+            <td>{{pt[2]}}</td>
+            <td>{{pt[3]}}</td>
+            <td>{{pt[4]}}</td>
+            <td>{{pt[5]}}</td>
+            <td>{{pt[6]}}</td>
+            <td>{{pt[7]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

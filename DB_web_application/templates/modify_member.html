@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/member_time" method="POST">
+    <p>member major time search</p>
+    <label for="m_id">member id:</label><br>
+    <input id="m_id" type="text" name="id" value=""><br>
+    <input type="submit" name="send" value="major_time_search">
+</form>
+
+<table border="1">
+    <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>gender</th>
+        <th>registration_date</th>
+        <th>phone_number</th>
+    </thead>
+
+    <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{member[0]}}</td>
+            <td>{{member[1]}}</td>
+            <td>{{member[2]}}</td>
+            <td>{{member[3]}}</td>
+            <td>{{member[4]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<form action="/modify_member2" method="POST">
+    <p>EX)M0000, KimAA, Man, 20191124, 010-0000-0000</p>
+    <label for="member_id">id:</label><br>
+    <input id="member_id" type="text" name="id" value=""><br>
+    <label for="member_name">name:</label><br>
+    <input id="member_name" type="text" name="name" value=""><br>
+    <label for="member_gender">gender:</label><br>
+    <input id="member_gender" type="text" name="gender" value=""><br>
+    <label for="regist_date">registration_date:</label><br>
+    <input id="regist_date" type="text" name="registration_date" value=""><br>
+    <label for="phone">phone_number:</label><br>
+    <input id="phone" type="text" name="phone_number" value=""><br>
+
+    <input type="submit" name="send" value="registration">
+    <input type="submit" name="send" value="delete">
+    <input type="submit" name="send" value="modify">
+</form>
+
+</body>
+</html>

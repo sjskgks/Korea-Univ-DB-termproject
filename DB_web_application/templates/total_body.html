@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+<form action="/specific_body" method="POST">
+    <label for="member_id">member id:</label><br>
+    <input id="member_id" type="text" name="id" value=""><br>
+    <input type="submit" name="send" value="search"><br>
+</form>
+
+<table border="1">
+    <thead>
+        <th>id</th>
+        <th>height</th>
+        <th>weight</th>
+        <th>fat_percentage</th>
+        <th>muscle_mass</th>
+        <th>measure_date</th>
+    </thead>
+
+    <tbody>
+        {% for body_info in bodies %}
+        <tr>
+            <td>{{body_info[0]}}</td>
+            <td>{{body_info[1]}}</td>
+            <td>{{body_info[2]}}</td>
+            <td>{{body_info[3]}}</td>
+            <td>{{body_info[4]}}</td>
+            <td>{{body_info[5]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

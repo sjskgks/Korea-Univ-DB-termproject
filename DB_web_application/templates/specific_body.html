@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/specific_body" method="POST">
+    <label for="member_id">member id:</label><br>
+    <input id="member_id" type="text" name="id" value=""><br>
+    <input type="submit" name="send" value="search"><br>
+</form>
+
+<p>first date body info</p>
+<table border="1">
+    <thead>
+        <th>first_date</th>
+        <th>member_id</th>
+        <th>height</th>
+        <th>weight</th>
+        <th>fat_percentage</th>
+        <th>muscle_mass</th>
+    </thead>
+
+    <tbody>
+        {% for body_info in f_body %}
+        <tr>
+            <td>{{body_info[0]}}</td>
+            <td>{{body_info[1]}}</td>
+            <td>{{body_info[2]}}</td>
+            <td>{{body_info[3]}}</td>
+            <td>{{body_info[4]}}</td>
+            <td>{{body_info[5]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p>last date body info</p>
+<table border="1">
+    <thead>
+        <th>last_date</th>
+        <th>member_id</th>
+        <th>height</th>
+        <th>weight</th>
+        <th>fat_percentage</th>
+        <th>muscle_mass</th>
+    </thead>
+
+    <tbody>
+        {% for body_info in l_body %}
+        <tr>
+            <td>{{body_info[0]}}</td>
+            <td>{{body_info[1]}}</td>
+            <td>{{body_info[2]}}</td>
+            <td>{{body_info[3]}}</td>
+            <td>{{body_info[4]}}</td>
+            <td>{{body_info[5]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p>변화량</p>
+<table border="1">
+    <thead>
+        <th>member_id</th>
+        <th>height</th>
+        <th>weight</th>
+        <th>fat_percentage</th>
+        <th>muscle_mass</th>
+    </thead>
+
+    <tbody>
+        {% for body_info in changed_body %}
+        <tr>
+            <td>{{body_info[0]}}</td>
+            <td>{{body_info[1]}}</td>
+            <td>{{body_info[2]}}</td>
+            <td>{{body_info[3]}}</td>
+            <td>{{body_info[4]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

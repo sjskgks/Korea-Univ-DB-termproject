@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/trainer_time" method="POST">
+    <p>trainer major time search</p>
+    <label for="t_id">trainer id:</label><br>
+    <input id="t_id" type="text" name="id" value=""><br>
+    <input type="submit" name="send" value="major_time_search">
+</form>
+
+<table border="1">
+    <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>gender</th>
+        <th>phone_number</th>
+    </thead>
+
+    <tbody>
+        {% for trainer in trainers %}
+        <tr>
+            <td>{{trainer[0]}}</td>
+            <td>{{trainer[1]}}</td>
+            <td>{{trainer[2]}}</td>
+            <td>{{trainer[3]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/member_time" method="POST">
+    <p>member major time search</p>
+    <label for="m_id">member id:</label><br>
+    <input id="m_id" type="text" name="id" value=""><br>
+    <input type="submit" name="send" value="major_time_search">
+</form>
+
+<form action="/trainer_time" method="POST">
+    <p>trainer major time search</p>
+    <label for="t_id">trainer id:</label><br>
+    <input id="t_id" type="text" name="id" value=""><br>
+    <input type="submit" name="send" value="major_time_search">
+</form>
+
+<table border="1">
+    <thead>
+        <th>m_id</th>
+        <th>m_name</th>
+        <th>day_of_week</th>
+        <th>major_time</th>
+    </thead>
+
+    <tbody>
+        {% for time_info  in major_time %}
+        <tr>
+            <td>{{time_info[0]}}</td>
+            <td>{{time_info[1]}}</td>
+            <td>{{time_info[2]}}</td>
+            <td>{{time_info[3]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
